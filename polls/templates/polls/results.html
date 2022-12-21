@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% extends 'base.html' %}
 </head>
 <body>
-
+{% block content %}
 <h1>{{question.question_text}}</h1>
 <ul>
   {% for choice in question.choice_set.all %}
@@ -15,6 +16,6 @@
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
 <a href="{% url 'polls:chart' question.id %}">Chart</a>
-
+   {% endblock %}
 </body>
 </html>

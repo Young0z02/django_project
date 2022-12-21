@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% extends 'base.html' %}
 </head>
 <body>
-
+ {% block content %}
 <h1>{{question.question_text}}</h1>
 {% if error_message %} <p> <strong>{{error_message}}</strong></p>{% endif %}
 
@@ -16,6 +17,7 @@
         <label for ="choice{{forloop.counter}}">{{choice.choice_text}}</label><br>
     {% endfor %}
     <input type="submit" value="Vote">
+    {% endblock %}
 </form>
 
 
